@@ -103,9 +103,11 @@ function Index() {
                 SAM Studios® is a multidisciplinary creative studio. Brand systems, films, products, installations, packaging, sites, sound, set design — if you can dream it, we can make it.
               </p>
               <div className="flex flex-wrap items-center gap-4 pt-2">
+                <a href="https://form.typeform.com/to/HB8qtmvl" target="_blank" rel="noopener noreferrer">
                 <MagneticButton>
                   <Sparkles className="h-4 w-4" /> Start a Project
                 </MagneticButton>
+                </a>
                 <a href="#work" className="font-mono-tight text-xs uppercase tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground">
                   → See the work
                 </a>
@@ -243,10 +245,10 @@ function Index() {
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {[
-              { src: workAether, title: "AETHER PROTOCOL", tag: "Brand Identity / 2024" },
-              { src: workObsidian, title: "OBSIDIAN LP", tag: "Album Art & Film / 2024" },
-              { src: workFilm, title: "NIGHT CHAPTER", tag: "Short Film / 2024" },
-              { src: workMonolith, title: "MONOLITH STUDIES", tag: "Installation / 2023" },
+              { src: workAether, title: "[REDACTED]", tag: "[REDACTED] / 20XX" },
+              { src: workObsidian, title: "[REDACTED]", tag: "[REDACTED] / 20XX" },
+              { src: workFilm, title: "[REDACTED]", tag: "[REDACTED] / 20XX" },
+              { src: workMonolith, title: "[REDACTED]", tag: "[REDACTED] / 20XX" },
             ].map((w) => (
               <a
                 key={w.title}
@@ -299,10 +301,12 @@ function Index() {
             </p>
             <div className="pt-2">
               <a
-                href="mailto:hello@samstudios.com"
+                href="https://form.typeform.com/to/HB8qtmvl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 rounded-full bg-background px-10 py-5 font-display text-sm font-bold uppercase tracking-widest text-foreground transition-transform hover:scale-105"
               >
-                Say Hello <ArrowUpRight className="h-4 w-4" />
+                Open Form <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -316,10 +320,9 @@ function Index() {
             SAM Studios<span className="ml-0.5 align-top text-[8px]">®</span>
           </div>
           <div className="flex gap-8 font-mono-tight text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            <a href="#" className="transition-colors hover:text-brand">Instagram</a>
-            <a href="#" className="transition-colors hover:text-brand">Vimeo</a>
-            <a href="#" className="transition-colors hover:text-brand">X</a>
-            <a href="#" className="transition-colors hover:text-brand">LinkedIn</a>
+            <a href="https://www.instagram.com/sachian05.hk" className="transition-colors hover:text-brand" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/Sachian_hk" className="transition-colors hover:text-brand" target="_blank" rel="noopener noreferrer">X</a>
+            <a href="https://www.linkedin.com/in/sachianderan" className="transition-colors hover:text-brand" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
           <div className="font-mono-tight text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
             © 2026 — All Rights Reserved

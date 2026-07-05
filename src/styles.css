@@ -156,6 +156,14 @@
     font-family: var(--font-sans);
     transition: background-color 0.5s ease, color 0.5s ease;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
 }
 
 @keyframes marquee {
@@ -173,6 +181,129 @@
 @keyframes pulse-slow {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.9; }
+}
+@keyframes scan {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes shine-sweep {
+  0% { transform: translateX(-130%) skewX(-18deg); opacity: 0; }
+  18% { opacity: 0.85; }
+  100% { transform: translateX(280%) skewX(-18deg); opacity: 0; }
+}
+@keyframes brand-pop {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  45% { transform: scale(1.14) rotate(-4deg); }
+}
+@keyframes intro-progress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes modal-rise {
+  0% { opacity: 0; transform: translateY(28px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes portal-ring {
+  0% { stroke-dashoffset: 283; transform: rotate(-90deg); }
+  100% { stroke-dashoffset: 54; transform: rotate(-90deg); }
+}
+@keyframes portal-scan-x {
+  0% { transform: translateX(-120%); opacity: 0; }
+  18% { opacity: 0.85; }
+  100% { transform: translateX(120%); opacity: 0; }
+}
+@keyframes data-blink {
+  0%, 100% { opacity: 0.35; transform: scaleY(0.55); }
+  50% { opacity: 1; transform: scaleY(1); }
+}
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+@keyframes glitch-y {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-1px); }
+  40% { transform: translateY(1px); }
+  60% { transform: translateY(-2px); }
+  80% { transform: translateY(1px); }
+}
+@keyframes tilt {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+@keyframes ring-draw {
+  0% { stroke-dashoffset: 566; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.94); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-up-out {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-105%); opacity: 1; }
+}
+@keyframes check-pop {
+  0% { opacity: 0; transform: translateY(-16px) scale(0.3) rotate(-10deg); }
+  55% { opacity: 1; transform: translateY(3px) scale(1.18) rotate(4deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+}
+@keyframes sun-arc {
+  0% { transform: translateX(-50%) rotate(-90deg); }
+  100% { transform: translateX(-50%) rotate(90deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand) 55%, transparent); }
+  50% { box-shadow: 0 0 0 8px color-mix(in oklab, var(--brand) 0%, transparent); }
+}
+@keyframes nav-underline {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  51% { transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+@keyframes cloud-drift {
+  0% { transform: translateX(0); opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(360%); opacity: 0; }
+}
+@keyframes sigil-orbit-slow {
+  from { transform: rotate(0deg) perspective(1000px) rotateX(60deg) rotate(0deg); }
+  to { transform: rotate(360deg) perspective(1000px) rotateX(60deg) rotate(360deg); }
+}
+@keyframes sigil-orbit-fast {
+  from { transform: rotate(0deg) perspective(1000px) rotateY(70deg) rotate(0deg); }
+  to { transform: rotate(-360deg) perspective(1000px) rotateY(70deg) rotate(-360deg); }
+}
+@keyframes sigil-core-pulse {
+  0%, 100% { transform: scale(1); filter: blur(2px) brightness(1); }
+  50% { transform: scale(1.15); filter: blur(4px) brightness(1.4); }
+}
+@keyframes sigil-satellite {
+  from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+@keyframes sigil-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @utility font-display { font-family: var(--font-display); }

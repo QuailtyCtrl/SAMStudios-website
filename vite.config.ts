@@ -12,9 +12,4 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  // Enable the nitro deploy plugin and target Vercel's serverless runtime.
-  // Without an explicit `nitro` key, the plugin is skipped outside Lovable's sandbox.
-  nitro: {
-    preset: "vercel",
-  },
 });

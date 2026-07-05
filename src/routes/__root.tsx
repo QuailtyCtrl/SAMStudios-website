@@ -12,6 +12,9 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { ThemeProvider } from "../components/theme-provider";
+import { IntroOverlay } from "../components/intro-overlay";
+import { ScrollProgressRail } from "../components/scroll-progress-rail";
+
 
 function NotFoundComponent() {
   return (
@@ -78,20 +81,48 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "SAM Studios® — We Make Anything" },
+      { title: "SAM Studios® — A Creative Studio" },
       { name: "description", content: "SAM Studios® is a multidisciplinary creative studio crafting brands, films, products, and experiences for the next era." },
       { name: "author", content: "SAM Studios" },
-      { property: "og:title", content: "SAM Studios® — We Make Anything" },
-      { property: "og:description", content: "A multidisciplinary creative studio crafting brands, films, products, and experiences." },
+      { property: "og:title", content: "SAM Studios® — A Creative Studio" },
+      { property: "og:description", content: "SAM Studios® is a multidisciplinary creative studio crafting brands, films, products, and experiences for the next era." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@samstudios" },
+      { name: "twitter:title", content: "SAM Studios® — A Creative Studio" },
+      { name: "twitter:description", content: "SAM Studios® is a multidisciplinary creative studio crafting brands, films, products, and experiences for the next era." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/16684e7f-854c-4ebe-9055-c079ac0774c3" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/16684e7f-854c-4ebe-9055-c079ac0774c3" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "SAM Studios",
+          url: "https://samstudios.lovable.app",
+          logo: "https://samstudios.lovable.app/favicon.png",
+          description:
+            "SAM Studios® is a multidisciplinary creative studio crafting brands, films, products, and experiences for the next era.",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "SAM Studios",
+          url: "https://samstudios.lovable.app",
+        }),
+      },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -126,6 +157,8 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
+        <IntroOverlay />
+        <ScrollProgressRail />
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </ThemeProvider>
